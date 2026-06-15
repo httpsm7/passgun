@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassGun - Targeted Password Generator</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f0f4f8, #e0e7ff); margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: auto; background: rgba(255,255,255,0.95); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        header { background: linear-gradient(90deg, #4f46e5, #7c3aed); color: white; padding: 2rem; text-align: center; }
+        h1 { margin: 0; font-size: 2.5rem; }
+        .content { padding: 2rem; }
+        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+        button { background: #4f46e5; color: white; padding: 14px 32px; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; }
+        button:hover { background: #4338ca; }
+        .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body>
+    <div class="container glass">
+        <header>
+            <h1>🔫 PassGun</h1>
+            <p>Advanced Targeted Password Generator for Kali/Parrot</p>
+        </header>
+        <div class="content">
+            <form method="POST">
+                <label>Target Keywords (comma separated)</label>
+                <input type="text" name="keywords" placeholder="starmaker,star,maker,host,admin" required>
+                
+                <label>Blocked Words (username, employee names)</label>
+                <input type="text" name="blocked" placeholder="wei,wang,employee">
+                
+                <label>Special Characters</label>
+                <input type="text" name="specials" placeholder="@#$_&-+" value="@#$_&-+">
+                
+                <label>Pattern Category</label>
+                <select name="category">
+                    <option value="normal">Normal Villager Common Patterns</option>
+                    <option value="social">Social People Patterns</option>
+                    <option value="org">Organisation Patterns</option>
+                    <option value="tech">Hacker/Developer/Admin Patterns</option>
+                </select>
+                
+                <label>Password Limit (max 15000)</label>
+                <input type="number" name="limit" value="5000" min="100" max="15000">
+                
+                <button type="submit">Generate & Download List</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
